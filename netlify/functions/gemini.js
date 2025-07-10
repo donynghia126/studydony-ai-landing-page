@@ -1,7 +1,5 @@
 // netlify/functions/gemini.js
 
-const fetch = require("node-fetch");
-
 exports.handler = async function (event, context) {
   // Lấy API key từ biến môi trường của Netlify (sẽ thiết lập ở Bước 3)
   const apiKey = process.env.GEMINI_API_KEY;
