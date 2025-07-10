@@ -2,11 +2,11 @@ const translations = {
   vi: {
     title: "Trợ Lý Học Thuật AI - Học Sâu Hơn, Nhanh Hơn, Thông Minh Hơn",
     metaDescription:
-      "StudyDony AI là trợ lý học thuật cá nhân của bạn, giúp bạn giải thích khái niệm, gỡ lỗi code, và xây dựng lộ trình học tập. Học sâu hơn, nhanh hơn, và thông minh hơn với AI.",
-    ogTitle: "StudyDony AI - Trợ Lý Học Thuật Cá Nhân Của Bạn",
+      "DonyStudy AI là trợ lý học thuật cá nhân của bạn, giúp bạn giải thích khái niệm, gỡ lỗi code, và xây dựng lộ trình học tập. Học sâu hơn, nhanh hơn, và thông minh hơn với AI.",
+    ogTitle: "DonyStudy AI - Trợ Lý Học Thuật Cá Nhân Của Bạn",
     ogDescription:
       "Học Sâu Hơn, Nhanh Hơn, Thông Minh Hơn. Khơi dậy tiềm năng, chinh phục tri thức cùng đối tác học tập thế hệ mới.",
-    appName: "🎓 StudyDony AI",
+    // appName: "DonyStudy AI",
     navHome: "Trang Chủ",
     navFeatures: "Tính Năng",
     navSubjects: "Môn Học",
@@ -21,7 +21,7 @@ const translations = {
     heroCTA: "Bắt Đầu Học Miễn Phí",
     featuresTitle: "Tất Cả Công Cụ Bạn Cần Để Thành Công",
     featuresSubtitle:
-      "Từ giải đáp bài tập phức tạp đến xây dựng lộ trình học tập, StudyDony AI luôn sẵn sàng hỗ trợ.",
+      "Từ giải đáp bài tập phức tạp đến xây dựng lộ trình học tập, DonyStudy AI luôn sẵn sàng hỗ trợ.",
     feature1Title: "Giải Thích Khái Niệm",
     feature1Desc:
       "Biến những chủ đề phức tạp nhất trở nên dễ hiểu qua các ví dụ trực quan và giải thích đơn giản.",
@@ -152,12 +152,12 @@ const translations = {
     plan3Feat4: "Hỗ trợ riêng",
     planContactButton: "Liên Hệ Kinh Doanh",
     testimonialQuote:
-      '"StudyDony AI đã thay đổi hoàn toàn cách tôi học. Thay vì mất hàng giờ để debug một lỗi code nhỏ, giờ tôi có thể nhận được giải pháp chỉ trong vài phút. Nó thực sự là một đối tác học tập thông minh mà tôi luôn ao ước."',
+      '"DonyStudy AI đã thay đổi hoàn toàn cách tôi học. Thay vì mất hàng giờ để debug một lỗi code nhỏ, giờ tôi có thể nhận được giải pháp chỉ trong vài phút. Nó thực sự là một đối tác học tập thông minh mà tôi luôn ao ước."',
     testimonialName: "Nakamura Aoi",
     testimonialRole: "Sinh viên năm 2, ngành Công nghệ Thông tin",
     faqTitle: "Các Câu Hỏi Thường Gặp",
     faqSubtitle: "Mọi thắc mắc của bạn đều sẽ được giải đáp tại đây.",
-    faq1Question: "StudyDony AI có miễn phí không?",
+    faq1Question: "DonyStudy AI có miễn phí không?",
     faq1Answer:
       "Có! Chúng tôi cung cấp một gói miễn phí hào phóng để bạn có thể trải nghiệm các tính năng cốt lõi. Đối với các nhu cầu nâng cao hơn, chúng tôi có các gói trả phí với nhiều tính năng vượt trội.",
     faq2Question: "Dữ liệu của tôi có được bảo mật không?",
@@ -175,7 +175,7 @@ const translations = {
     footerSubscribeDesc: "Nhận tin tức và cập nhật mới nhất từ chúng tôi.",
     footerEmailPlaceholder: "Nhập email của bạn",
     footerSubscribeButton: "Đăng ký",
-    footerRights: "© 2025 StudyDony AI. Mọi quyền được bảo lưu.",
+    footerRights: "© 2025 DonyStudy AI. Mọi quyền được bảo lưu.",
     footerSlogan: "Học Sâu Hơn, Nhanh Hơn, Thông Minh Hơn.",
     footerPrivacy: "Chính sách Bảo mật",
     footerTerms: "Điều khoản Dịch vụ",
@@ -183,11 +183,11 @@ const translations = {
   en: {
     title: "AI Academic Assistant - Learn Deeper, Faster, Smarter",
     metaDescription:
-      "StudyDony AI is your personal academic assistant, helping you explain concepts, debug code, and build learning roadmaps. Learn deeper, faster, and smarter with AI.",
-    ogTitle: "StudyDony AI - Your Personal Academic Assistant",
+      "DonyStudy AI is your personal academic assistant, helping you explain concepts, debug code, and build learning roadmaps. Learn deeper, faster, and smarter with AI.",
+    ogTitle: "DonyStudy AI - Your Personal Academic Assistant",
     ogDescription:
       "Learn Deeper, Faster, Smarter. Unleash your potential and conquer knowledge with a next-generation learning partner.",
-    appName: "🎓 StudyDony AI",
+    // appName: "🎓 DonyStudy AI",
     navHome: "Home",
     navFeatures: "Features",
     navSubjects: "Subjects",
@@ -202,7 +202,7 @@ const translations = {
     heroCTA: "Start Learning for Free",
     featuresTitle: "All The Tools You Need To Succeed",
     featuresSubtitle:
-      "From solving complex assignments to building a study roadmap, StudyDony AI is here to help.",
+      "From solving complex assignments to building a study roadmap, DonyStudy AI is here to help.",
     feature1Title: "Concept Explanation",
     feature1Desc:
       "Make the most complex topics easy to understand through visual examples and simple explanations.",
@@ -336,12 +336,12 @@ const translations = {
     plan3Feat4: "Dedicated support",
     planContactButton: "Contact Sales",
     testimonialQuote:
-      "\"StudyDony AI completely changed how I learn. Instead of spending hours debugging a small code error, I now get a solution in minutes. It's truly the smart learning partner I've always wished for.\"",
+      "\"DonyStudy AI completely changed how I learn. Instead of spending hours debugging a small code error, I now get a solution in minutes. It's truly the smart learning partner I've always wished for.\"",
     testimonialName: "Nakamura Aoi",
     testimonialRole: "2nd Year Student, Information Technology",
     faqTitle: "Frequently Asked Questions",
     faqSubtitle: "All your questions will be answered here.",
-    faq1Question: "Is StudyDony AI free?",
+    faq1Question: "Is DonyStudy AI free?",
     faq1Answer:
       "Yes! We offer a generous free plan for you to experience the core features. For more advanced needs, we have paid plans with superior features.",
     faq2Question: "Is my data secure?",
@@ -359,7 +359,7 @@ const translations = {
     footerSubscribeDesc: "Get the latest news and updates from our team.",
     footerEmailPlaceholder: "Enter your email",
     footerSubscribeButton: "Subscribe",
-    footerRights: "© 2025 StudyDony AI. All rights reserved.",
+    footerRights: "© 2025 DonyStudy AI. All rights reserved.",
     footerSlogan: "Learn Deeper, Faster, Smarter.",
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms of Service",
@@ -367,11 +367,11 @@ const translations = {
   ja: {
     title: "AI学習アシスタント - より深く、より速く、より賢く学ぶ",
     metaDescription:
-      "StudyDony AIは、概念の説明、コードのデバッグ、学習ロードマップの作成を支援する、あなたのパーソナル学習アシスタントです。AIでより深く、より速く、より賢く学びましょう。",
-    ogTitle: "StudyDony AI - あなたのパーソナル学習アシスタント",
+      "DonyStudy AIは、概念の説明、コードのデバッグ、学習ロードマップの作成を支援する、あなたのパーソナル学習アシスタントです。AIでより深く、より速く、より賢く学びましょう。",
+    ogTitle: "DonyStudy AI - あなたのパーソナル学習アシスタント",
     ogDescription:
       "より深く、より速く、より賢く学ぶ。次世代の学習パートナーと共に、あなたの可能性を解き放ち、知識を征服しましょう。",
-    appName: "🎓 StudyDony AI",
+    // appName: "🎓 DonyStudy AI",
     navHome: "ホーム",
     navFeatures: "機能",
     navSubjects: "科目",
@@ -386,7 +386,7 @@ const translations = {
     heroCTA: "無料で学習を始める",
     featuresTitle: "成功に必要なすべてのツール",
     featuresSubtitle:
-      "複雑な課題の解決から学習ロードマップの作成まで、StudyDony AIがサポートします。",
+      "複雑な課題の解決から学習ロードマップの作成まで、DonyStudy AIがサポートします。",
     feature1Title: "概念の説明",
     feature1Desc:
       "視覚的な例と簡単な説明で、最も複雑なトピックも理解しやすくします。",
@@ -512,12 +512,12 @@ const translations = {
     plan3Feat4: "専用サポート",
     planContactButton: "営業へのお問い合わせ",
     testimonialQuote:
-      "「StudyDony AIは私の学習方法を完全に変えました。小さなコードエラーのデバッグに何時間も費やす代わりに、数分で解決策を得られるようになりました。私がずっと望んでいたスマートな学習パートナーです。」",
+      "「DonyStudy AIは私の学習方法を完全に変えました。小さなコードエラーのデバッグに何時間も費やす代わりに、数分で解決策を得られるようになりました。私がずっと望んでいたスマートな学習パートナーです。」",
     testimonialName: "中村あおい",
     testimonialRole: "情報技術学部 2年生",
     faqTitle: "よくある質問",
     faqSubtitle: "あなたのすべての質問はここで解決されます。",
-    faq1Question: "StudyDony AIは無料ですか？",
+    faq1Question: "DonyStudy AIは無料ですか？",
     faq1Answer:
       "はい！主要な機能を体験できる寛大な無料プランを提供しています。より高度なニーズには、優れた機能を備えた有料プランがあります。",
     faq2Question: "私のデータは安全ですか？",
@@ -536,7 +536,7 @@ const translations = {
       "私たちのチームから最新のニュースとアップデートを入手してください。",
     footerEmailPlaceholder: "メールアドレスを入力",
     footerSubscribeButton: "購読",
-    footerRights: "© 2025 StudyDony AI. 全著作権所有。",
+    footerRights: "© 2025 DonyStudy AI. 全著作権所有。",
     footerSlogan: "より深く、より速く、より賢く学ぶ。",
     footerPrivacy: "プライバシーポリシー",
     footerTerms: "利用規約",
