@@ -3,7 +3,8 @@
 exports.handler = async function (event, context) {
   // Lấy API key từ biến môi trường của Netlify (sẽ thiết lập ở Bước 3)
   const apiKey = process.env.GEMINI_API_KEY;
-  const googleApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+  // Đảm bảo dòng này chính xác tuyệt đối, không sai một ký tự nào
+  const googleApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
   if (!apiKey) {
     return {
