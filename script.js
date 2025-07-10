@@ -869,10 +869,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // Gemini API integration for interactive demos
-  const apiKey = ""; // IMPORTANT: Leave this empty. The execution environment will handle the API key.
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
+  // *** CHANGED PART: Securely call the Gemini API via a Netlify Function ***
   async function callGemini(prompt, buttonElement, outputElement, errorKey) {
     const textSpan = buttonElement.querySelector(".btn-text");
     const loader = buttonElement.querySelector(".loader");
@@ -884,13 +881,14 @@ document.addEventListener("DOMContentLoaded", () => {
     outputElement.innerHTML = "";
 
     try {
-      const payload = {
-        contents: [{ role: "user", parts: [{ text: prompt }] }],
-      };
+      // The API endpoint is now our own Netlify Function
+      const apiUrl = "/.netlify/functions/call-gemini";
+
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        // Send the prompt in the body of the request
+        body: JSON.stringify({ prompt: prompt }),
       });
 
       if (!response.ok) {
@@ -909,7 +907,12 @@ document.addEventListener("DOMContentLoaded", () => {
         text = text.replace(/\n/g, "<br>");
         outputElement.innerHTML = text;
       } else {
-        throw new Error("Invalid response structure from API.");
+        // Handle cases where the API returns a valid response but no candidates (e.g., safety blocks)
+        const errorMessage =
+          result.promptFeedback?.blockReason ||
+          "Invalid response structure from API.";
+        console.error("API Error:", errorMessage);
+        outputElement.innerHTML = `<span class="text-red-500">${translations[currentLang][errorKey]}</span>`;
       }
     } catch (error) {
       console.error("Gemini API call error:", error);
