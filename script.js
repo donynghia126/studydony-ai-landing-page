@@ -1,4 +1,3 @@
-// Data for translations in different languages
 const translations = {
   vi: {
     title: "Trợ Lý Học Thuật AI - Học Sâu Hơn, Nhanh Hơn, Thông Minh Hơn",
@@ -544,20 +543,55 @@ const translations = {
   },
 };
 
-// Data for subject cards
 const subjectData = {
   web: [
-    { icon: "💻", titleKey: "subjectWeb1Title", descKey: "subjectWeb1Desc" },
-    { icon: "⚡️", titleKey: "subjectWeb2Title", descKey: "subjectWeb2Desc" },
-    { icon: "⚛️", titleKey: "subjectWeb3Title", descKey: "subjectWeb3Desc" },
-    { icon: "⚙️", titleKey: "subjectWeb4Title", descKey: "subjectWeb4Desc" },
-    { icon: "🗃️", titleKey: "subjectWeb5Title", descKey: "subjectWeb5Desc" },
-    { icon: "🚀", titleKey: "subjectWeb6Title", descKey: "subjectWeb6Desc" },
+    {
+      icon: "💻",
+      titleKey: "subjectWeb1Title",
+      descKey: "subjectWeb1Desc",
+    },
+    {
+      icon: "⚡️",
+      titleKey: "subjectWeb2Title",
+      descKey: "subjectWeb2Desc",
+    },
+    {
+      icon: "⚛️",
+      titleKey: "subjectWeb3Title",
+      descKey: "subjectWeb3Desc",
+    },
+    {
+      icon: "⚙️",
+      titleKey: "subjectWeb4Title",
+      descKey: "subjectWeb4Desc",
+    },
+    {
+      icon: "🗃️",
+      titleKey: "subjectWeb5Title",
+      descKey: "subjectWeb5Desc",
+    },
+    {
+      icon: "🚀",
+      titleKey: "subjectWeb6Title",
+      descKey: "subjectWeb6Desc",
+    },
   ],
   math: [
-    { icon: "➕", titleKey: "subjectMath1Title", descKey: "subjectMath1Desc" },
-    { icon: "📐", titleKey: "subjectMath2Title", descKey: "subjectMath2Desc" },
-    { icon: "📈", titleKey: "subjectMath3Title", descKey: "subjectMath3Desc" },
+    {
+      icon: "➕",
+      titleKey: "subjectMath1Title",
+      descKey: "subjectMath1Desc",
+    },
+    {
+      icon: "📐",
+      titleKey: "subjectMath2Title",
+      descKey: "subjectMath2Desc",
+    },
+    {
+      icon: "📈",
+      titleKey: "subjectMath3Title",
+      descKey: "subjectMath3Desc",
+    },
   ],
   physics: [
     {
@@ -612,7 +646,6 @@ const subjectData = {
   ],
 };
 
-// Wait for the DOM to be fully loaded before running scripts
 document.addEventListener("DOMContentLoaded", () => {
   const langSwitcher = document.getElementById("language-switcher");
   const allTextElements = document.querySelectorAll("[data-key]");
@@ -628,7 +661,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "subject-tags-container"
   );
 
-  // Function to render subject cards based on category and language
   function renderSubjectCards(category) {
     const cardsData = subjectData[category] || [];
     subjectCardsGrid.innerHTML = "";
@@ -636,26 +668,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const cardElement = document.createElement("div");
       cardElement.className = "subject-card";
       cardElement.innerHTML = `
-                <div class="text-3xl mb-3">${card.icon}</div>
-                <h3 class="text-xl font-bold mb-2" data-key="${
-                  card.titleKey
-                }">${
+                  <div class="text-3xl mb-3">${card.icon}</div>
+                  <h3 class="text-xl font-bold mb-2" data-key="${
+                    card.titleKey
+                  }">${
         translations[currentLang][card.titleKey] || card.titleKey
       }</h3>
-                <p class="text-gray-600" data-key="${card.descKey}">${
+                  <p class="text-gray-600" data-key="${card.descKey}">${
         translations[currentLang][card.descKey] || card.descKey
       }</p>
-            `;
+              `;
       subjectCardsGrid.appendChild(cardElement);
     });
   }
 
-  // Function to update all text content on the page based on the selected language
   function updateContent(lang) {
     currentLang = lang;
     if (!translations[lang]) return;
 
-    // Update text content
     allTextElements.forEach((element) => {
       const key = element.getAttribute("data-key");
       if (translations[lang][key]) {
@@ -663,7 +693,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Update placeholder text
     allPlaceholderElements.forEach((element) => {
       const key = element.getAttribute("data-key-placeholder");
       if (translations[lang][key]) {
@@ -671,7 +700,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Update meta tag content attributes
     allContentElements.forEach((element) => {
       const key = element.getAttribute("data-key-content");
       if (translations[lang][key]) {
@@ -679,10 +707,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Set the lang attribute of the html tag
     document.documentElement.lang = lang;
 
-    // Update chart labels if the chart exists
     if (
       myChart &&
       translations[lang] &&
@@ -692,19 +718,16 @@ document.addEventListener("DOMContentLoaded", () => {
       myChart.update();
     }
 
-    // Re-render subject cards with the new language
     const activeTag = subjectTagsContainer.querySelector(".active");
     if (activeTag) {
       renderSubjectCards(activeTag.dataset.category);
     }
   }
 
-  // Event listener for the language switcher dropdown
   langSwitcher.addEventListener("change", (event) => {
     updateContent(event.target.value);
   });
 
-  // Event listener for subject category tags
   subjectTagsContainer.addEventListener("click", (e) => {
     if (e.target.classList.contains("subject-tag")) {
       subjectTagsContainer.querySelector(".active")?.classList.remove("active");
@@ -715,34 +738,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // AI Animation in Hero section
   const animationContainer = document.querySelector(".ai-animation");
-  if (animationContainer) {
-    const nodes = [];
-    const nodeCount = 7;
-    for (let i = 0; i < nodeCount; i++) {
-      const node = document.createElement("div");
-      node.className = "node";
-      const angle = (i / nodeCount) * 2 * Math.PI;
-      const x = 50 + 40 * Math.cos(angle);
-      const y = 50 + 40 * Math.sin(angle);
-      node.style.left = `${x}%`;
-      node.style.top = `${y}%`;
-      node.style.transform = `translate(-50%, -50%)`;
-      if (i % 2 === 0) {
-        node.classList.add("pulse");
-        node.style.animationDelay = `${i * 0.2}s`;
-      }
-      animationContainer.appendChild(node);
-      nodes.push(node);
+  const nodes = [];
+  const nodeCount = 7;
+  for (let i = 0; i < nodeCount; i++) {
+    const node = document.createElement("div");
+    node.className = "node";
+    const angle = (i / nodeCount) * 2 * Math.PI;
+    const x = 50 + 40 * Math.cos(angle);
+    const y = 50 + 40 * Math.sin(angle);
+    node.style.left = `${x}%`;
+    node.style.top = `${y}%`;
+    node.style.transform = `translate(-50%, -50%)`;
+    if (i % 2 === 0) {
+      node.classList.add("pulse");
+      node.style.animationDelay = `${i * 0.2}s`;
     }
-    const centerNode = document.createElement("div");
-    centerNode.className = "node pulse";
-    centerNode.style.left = "50%";
-    centerNode.style.top = "50%";
-    centerNode.style.transform = "translate(-50%, -50%) scale(1.5)";
-    animationContainer.appendChild(centerNode);
+    animationContainer.appendChild(node);
+    nodes.push(node);
   }
+  const centerNode = document.createElement("div");
+  centerNode.className = "node pulse";
+  centerNode.style.left = "50%";
+  centerNode.style.top = "50%";
+  centerNode.style.transform = "translate(-50%, -50%) scale(1.5)";
+  animationContainer.appendChild(centerNode);
 
-  // Intersection Observer for fade-in animations on scroll
   const sections = document.querySelectorAll(".fade-in-section");
   const observer = new IntersectionObserver(
     (entries) => {
@@ -760,7 +780,6 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
   });
 
-  // Accordion functionality for the FAQ section
   const faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach((item) => {
     const question = item.querySelector(".faq-question");
@@ -770,13 +789,11 @@ document.addEventListener("DOMContentLoaded", () => {
     question.addEventListener("click", () => {
       const isOpen = answer.style.maxHeight && answer.style.maxHeight !== "0px";
 
-      // Close all other FAQ items
       faqItems.forEach((otherItem) => {
         otherItem.querySelector(".faq-answer").style.maxHeight = "0px";
         otherItem.querySelector(".faq-icon").style.transform = "rotate(0deg)";
       });
 
-      // Open the clicked item if it was closed
       if (!isOpen) {
         answer.style.maxHeight = answer.scrollHeight + "px";
         icon.style.transform = "rotate(45deg)";
@@ -784,7 +801,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Tab functionality for the Audience section
   const tabButtons = document.querySelectorAll(".tab-button");
   const tabContents = document.querySelectorAll(".tab-content");
 
@@ -806,7 +822,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Chart.js implementation for the Audience chart
   const ctx = document.getElementById("audienceChart").getContext("2d");
   myChart = new Chart(ctx, {
     type: "doughnut",
@@ -862,33 +877,35 @@ document.addEventListener("DOMContentLoaded", () => {
             `.tab-button[data-tab='${tabNumber}']`
           );
           if (targetTab) {
-            targetTab.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            targetTab.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+            });
           }
         }
       },
     },
   });
 
-  // *** CHANGED PART: Securely call the Gemini API via a Netlify Function ***
+  // const apiKey = "";
+  // const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+
   async function callGemini(prompt, buttonElement, outputElement, errorKey) {
+    const apiUrl = `/.netlify/functions/gemini`;
     const textSpan = buttonElement.querySelector(".btn-text");
     const loader = buttonElement.querySelector(".loader");
 
-    // Show loader and disable button
     textSpan.classList.add("hidden");
     loader.classList.remove("hidden");
     buttonElement.disabled = true;
     outputElement.innerHTML = "";
 
     try {
-      // The API endpoint is now our own Netlify Function
-      const apiUrl = "/.netlify/functions/call-gemini";
-
+      const payload = { prompt: prompt };
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // Send the prompt in the body of the request
-        body: JSON.stringify({ prompt: prompt }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
@@ -903,29 +920,27 @@ document.addEventListener("DOMContentLoaded", () => {
         result.candidates[0].content.parts.length > 0
       ) {
         let text = result.candidates[0].content.parts[0].text;
-        // Simple formatting to display newlines correctly in HTML
         text = text.replace(/\n/g, "<br>");
         outputElement.innerHTML = text;
       } else {
-        // Handle cases where the API returns a valid response but no candidates (e.g., safety blocks)
-        const errorMessage =
-          result.promptFeedback?.blockReason ||
-          "Invalid response structure from API.";
-        console.error("API Error:", errorMessage);
-        outputElement.innerHTML = `<span class="text-red-500">${translations[currentLang][errorKey]}</span>`;
+        // Nếu có lỗi từ function (ví dụ: API key sai), nó sẽ hiển thị ở đây
+        if (result.error) {
+          throw new Error(result.error);
+        }
+        throw new Error("Invalid response structure from API.");
       }
     } catch (error) {
       console.error("Gemini API call error:", error);
-      outputElement.innerHTML = `<span class="text-red-500">${translations[currentLang][errorKey]}</span>`;
+      outputElement.innerHTML = `<span class="text-red-500">${
+        error.message || translations[currentLang][errorKey]
+      }</span>`;
     } finally {
-      // Hide loader and re-enable button
       textSpan.classList.remove("hidden");
       loader.classList.add("hidden");
       buttonElement.disabled = false;
     }
   }
 
-  // Event listener for the "Concept Explanation" demo
   const conceptInput = document.getElementById("concept-input");
   const conceptBtn = document.getElementById("concept-btn");
   const conceptOutput = document.getElementById("concept-output");
@@ -937,7 +952,6 @@ document.addEventListener("DOMContentLoaded", () => {
     callGemini(prompt, conceptBtn, conceptOutput, "demo1Error");
   });
 
-  // Event listener for the "Roadmap Building" demo
   const roadmapInput = document.getElementById("roadmap-input");
   const roadmapBtn = document.getElementById("roadmap-btn");
   const roadmapOutput = document.getElementById("roadmap-output");
@@ -949,17 +963,10 @@ document.addEventListener("DOMContentLoaded", () => {
     callGemini(prompt, roadmapBtn, roadmapOutput, "demo2Error");
   });
 
-  // Initialization logic on page load
-  function initializePage() {
-    // Set the first subject tag as active by default
-    subjectTagsContainer
-      .querySelector('[data-category="web"]')
-      .classList.add("active");
-    // Set the default language and render content
-    updateContent("en");
-    // Make the first section visible immediately
-    document.querySelector(".fade-in-section").classList.add("is-visible");
-  }
-
-  initializePage();
+  // Initialize
+  subjectTagsContainer
+    .querySelector('[data-category="web"]')
+    .classList.add("active");
+  updateContent("en"); // Set default language on load
+  document.querySelector(".fade-in-section").classList.add("is-visible");
 });

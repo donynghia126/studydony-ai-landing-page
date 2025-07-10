@@ -3,12 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Chosen Palette: "Cyber Glow" - A vibrant and tech-inspired theme. It keeps the core "Trustful Blue" (#3B82F6) for primary actions and trust, but introduces a lively Magenta (#EC4899) and Teal (#2DD4BF) as RGB-style accents for highlights and visual energy. -->
-    <!-- Application Structure Plan: A single-page, narrative-driven structure. Flow: 1. Hero, 2. Features, 3. Subjects, 4. Audience, 5. About Us, 6. Pricing, 7. Testimonial, 8. FAQ, 9. Final CTA. Added "About Us" section with team members to build trust and tell the story behind the project. -->
-    <!-- Visualization & Content Choices: Added a responsive 3-card pricing table using Flexbox/Grid. Implemented SEO meta tags (description, Open Graph) for better social sharing and search engine visibility. Added a placeholder for Google Analytics script for future tracking implementation. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-
-    <!-- SEO Meta Tags -->
     <title data-key="title">
       AI Academic Assistant - Learn Deeper, Faster, Smarter
     </title>
@@ -18,7 +12,6 @@
       content="StudyDony AI is your personal academic assistant, helping you explain concepts, debug code, and build learning roadmaps. Learn deeper, faster, and smarter with AI."
     />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://donystudyai.netlify.app/" />
     <meta
@@ -36,7 +29,6 @@
       content="https://placehold.co/1200x630/3B82F6/FFFFFF?text=StudyDony+AI"
     />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://donystudyai.netlify.app/" />
     <meta
@@ -62,23 +54,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles.css" />
-
-    <!-- Google Analytics Placeholder -->
-    <!-- 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID'); // Replace GA_MEASUREMENT_ID with your measurement ID
-    </script>
-    -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-slate-50">
-    <!-- Header -->
     <header
       class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm"
     >
@@ -86,7 +64,7 @@
         class="container mx-auto px-6 py-3 flex justify-between items-center"
       >
         <a href="#" class="text-xl font-bold text-blue-600" data-key="appName"
-          >🎓 StudyDony AI</a
+          >🎓 StudyDony</a
         >
         <nav class="hidden md:flex items-center space-x-6">
           <a
@@ -113,7 +91,6 @@
             data-key="navAboutUs"
             >About Us</a
           >
-          <!-- Để hiện lại mục Bảng giá, hãy xóa class "hidden" ở thẻ <a> ngay bên dưới -->
           <a
             href="#pricing"
             class="text-gray-600 hover:text-blue-600 transition-colors hidden"
@@ -139,7 +116,7 @@
             </select>
           </div>
           <a
-            href="https://donystudyai.netlify.app"
+            href="https://donystudyai.netlify.app/"
             target="_blank"
             class="hidden sm:block bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
             data-key="navCTA"
@@ -150,7 +127,6 @@
     </header>
 
     <main class="pt-20">
-      <!-- Hero Section -->
       <section class="py-20 md:py-28 px-6 fade-in-section">
         <div class="container mx-auto">
           <div
@@ -171,7 +147,7 @@
                 conquer knowledge with a next-generation learning partner.
               </p>
               <a
-                href="donystudyai.netlify.app"
+                href="https://donystudyai.netlify.app/"
                 target="_blank"
                 class="bg-blue-600 text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 inline-block shadow-lg"
                 data-key="heroCTA"
@@ -179,15 +155,12 @@
               >
             </div>
             <div class="hidden md:flex md:w-1/2 items-center justify-center">
-              <div class="ai-animation">
-                <!-- This will be populated by JS -->
-              </div>
+              <div class="ai-animation"></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Features Section -->
       <section id="features" class="py-16 bg-white fade-in-section">
         <div class="container mx-auto px-6">
           <div class="text-center mb-12">
@@ -279,7 +252,6 @@
         </div>
       </section>
 
-      <!-- Subjects Section -->
       <section id="subjects" class="py-20 fade-in-section">
         <div class="container mx-auto px-6">
           <div class="text-center mb-12">
@@ -343,13 +315,10 @@
           <div
             id="subject-cards-grid"
             class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            <!-- Subject cards will be dynamically inserted here by JS -->
-          </div>
+          ></div>
         </div>
       </section>
 
-      <!-- Audience Section -->
       <section id="audience" class="py-20 bg-white fade-in-section">
         <div class="container mx-auto px-6">
           <div class="text-center mb-12">
@@ -520,7 +489,6 @@
         </div>
       </section>
 
-      <!-- About Us Section -->
       <section id="about-us" class="py-20 fade-in-section">
         <div class="container mx-auto px-6 text-center">
           <h2
@@ -538,7 +506,6 @@
           <div
             class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto"
           >
-            <!-- Team Member 1 -->
             <div class="text-center">
               <img
                 src="https://placehold.co/150x150/EC4899/FFFFFF?text=Dony"
@@ -550,7 +517,6 @@
                 Founder & Lead Developer
               </p>
             </div>
-            <!-- Team Member 2 -->
             <div class="text-center">
               <img
                 src="https://placehold.co/150x150/2DD4BF/FFFFFF?text=AI"
@@ -564,7 +530,6 @@
                 AI Co-Pilot
               </p>
             </div>
-            <!-- Team Member 3 -->
             <div class="text-center">
               <img
                 src="https://placehold.co/150x150/A78BFA/FFFFFF?text=You"
@@ -580,8 +545,6 @@
         </div>
       </section>
 
-      <!-- Pricing Section -->
-      <!-- Để hiện lại mục Bảng giá, hãy xóa class "hidden" ở thẻ section ngay bên dưới -->
       <section id="pricing" class="py-20 fade-in-section hidden">
         <div class="container mx-auto px-6">
           <div class="text-center mb-12">
@@ -601,7 +564,6 @@
           <div
             class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
           >
-            <!-- Free Plan -->
             <div class="pricing-card bg-white p-8 flex flex-col">
               <h3 class="text-2xl font-bold mb-2" data-key="plan1Name">Free</h3>
               <p class="text-gray-500 mb-6" data-key="plan1Desc">
@@ -636,7 +598,6 @@
                 >Get Started</a
               >
             </div>
-            <!-- Pro Plan (Popular) -->
             <div class="pricing-card bg-white p-8 flex flex-col popular">
               <div class="text-right mb-2">
                 <span
@@ -682,7 +643,6 @@
                 >Get Started</a
               >
             </div>
-            <!-- Premium Plan -->
             <div class="pricing-card bg-white p-8 flex flex-col">
               <h3 class="text-2xl font-bold mb-2" data-key="plan3Name">
                 Premium
@@ -722,7 +682,6 @@
         </div>
       </section>
 
-      <!-- Persona / Testimonial Section -->
       <section class="py-20 bg-white fade-in-section">
         <div class="container mx-auto px-6">
           <div
@@ -754,7 +713,6 @@
         </div>
       </section>
 
-      <!-- FAQ Section -->
       <section id="faq" class="py-20 fade-in-section">
         <div class="container mx-auto px-6 max-w-4xl">
           <div class="text-center mb-12">
@@ -841,7 +799,6 @@
         </div>
       </section>
 
-      <!-- Final CTA Section -->
       <section class="py-20 bg-white fade-in-section">
         <div class="container mx-auto px-6 text-center">
           <h2
@@ -858,7 +815,7 @@
             education today.
           </p>
           <a
-            href="donystudyai.netlify.app"
+            href="https://donystudyai.netlify.app/"
             target="_blank"
             class="bg-blue-600 text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 inline-block shadow-lg"
             data-key="finalCtaButton"
@@ -868,7 +825,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white">
       <div class="container mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -891,7 +847,6 @@
                   >Features</a
                 >
               </li>
-              <!-- Để hiện lại mục Bảng giá, hãy xóa class "hidden" ở thẻ <li> ngay bên dưới -->
               <li class="hidden">
                 <a
                   href="#pricing"
@@ -957,7 +912,6 @@
       </div>
     </footer>
 
-    <!-- Link to external JS file -->
     <script src="script.js"></script>
   </body>
 </html>
