@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Chosen Palette: "Cyber Glow" - A vibrant and tech-inspired theme. It keeps the core "Trustful Blue" (#3B82F6) for primary actions and trust, but introduces a lively Magenta (#EC4899) and Teal (#2DD4BF) as RGB-style accents for highlights and visual energy. -->
+    <!-- Application Structure Plan: A single-page, narrative-driven structure. Flow: 1. Hero, 2. Features, 3. Subjects, 4. Audience, 5. About Us, 6. Pricing, 7. Testimonial, 8. FAQ, 9. Final CTA. Added "About Us" section with team members to build trust and tell the story behind the project. -->
+    <!-- Visualization & Content Choices: Added a responsive 3-card pricing table using Flexbox/Grid. Implemented SEO meta tags (description, Open Graph) for better social sharing and search engine visibility. Added a placeholder for Google Analytics script for future tracking implementation. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- SEO Meta Tags -->
+    <title data-key="title">
+      AI Academic Assistant - Learn Deeper, Faster, Smarter
+    </title>
+    <meta
+      name="description"
+      data-key-content="metaDescription"
+      content="StudyDony AI is your personal academic assistant, helping you explain concepts, debug code, and build learning roadmaps. Learn deeper, faster, and smarter with AI."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://donystudyai.netlify.app/" />
+    <meta
+      property="og:title"
+      data-key-content="ogTitle"
+      content="StudyDony AI - Your Personal Academic Assistant"
+    />
+    <meta
+      property="og:description"
+      data-key-content="ogDescription"
+      content="Learn Deeper, Faster, Smarter. Unleash your potential and conquer knowledge with a next-generation learning partner."
+    />
+    <meta
+      property="og:image"
+      content="https://placehold.co/1200x630/3B82F6/FFFFFF?text=StudyDony+AI"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://donystudyai.netlify.app/" />
+    <meta
+      property="twitter:title"
+      data-key-content="ogTitle"
+      content="StudyDony AI - Your Personal Academic Assistant"
+    />
+    <meta
+      property="twitter:description"
+      data-key-content="ogDescription"
+      content="Learn Deeper, Faster, Smarter. Unleash your potential and conquer knowledge with a next-generation learning partner."
+    />
+    <meta
+      property="twitter:image"
+      content="https://placehold.co/1200x630/3B82F6/FFFFFF?text=StudyDony+AI"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Analytics Placeholder -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID'); // Replace GA_MEASUREMENT_ID with your measurement ID
+    </script>
+    -->
+  </head>
+  <body class="bg-slate-50">
+    <!-- Header -->
+    <header
+      class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm"
+    >
+      <div
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <a href="#" class="text-xl font-bold text-blue-600" data-key="appName"
+          >🎓 StudyDony AI</a
+        >
+        <nav class="hidden md:flex items-center space-x-6">
+          <a
+            href="#"
+            class="text-gray-600 hover:text-blue-600 transition-colors"
+            data-key="navHome"
+            >Home</a
+          >
+          <a
+            href="#features"
+            class="text-gray-600 hover:text-blue-600 transition-colors"
+            data-key="navFeatures"
+            >Features</a
+          >
+          <a
+            href="#subjects"
+            class="text-gray-600 hover:text-blue-600 transition-colors"
+            data-key="navSubjects"
+            >Subjects</a
+          >
+          <a
+            href="#about-us"
+            class="text-gray-600 hover:text-blue-600 transition-colors"
+            data-key="navAboutUs"
+            >About Us</a
+          >
+          <!-- Để hiện lại mục Bảng giá, hãy xóa class "hidden" ở thẻ <a> ngay bên dưới -->
+          <a
+            href="#pricing"
+            class="text-gray-600 hover:text-blue-600 transition-colors hidden"
+            data-key="navPricing"
+            >Pricing</a
+          >
+          <a
+            href="#faq"
+            class="text-gray-600 hover:text-blue-600 transition-colors"
+            data-key="navFAQ"
+            >FAQ</a
+          >
+        </nav>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <select
+              id="language-switcher"
+              class="pl-3 pr-8 py-2 text-sm bg-gray-100 border-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="vi">🇻🇳 Tiếng Việt</option>
+              <option value="en" selected>🇬🇧 English</option>
+              <option value="ja">🇯🇵 日本語</option>
+            </select>
+          </div>
+          <a
+            href="https://donystudyai.netlify.app"
+            target="_blank"
+            class="hidden sm:block bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
+            data-key="navCTA"
+            >Try Chatbot</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section class="py-20 md:py-28 px-6 fade-in-section">
+        <div class="container mx-auto">
+          <div
+            class="flex flex-col md:flex-row items-center justify-center gap-8"
+          >
+            <div class="text-center md:text-left md:w-1/2">
+              <h1
+                class="text-4xl md:text-6xl font-extrabold text-gray-800 mb-4"
+                data-key="heroTitle"
+              >
+                Your Personal AI Academic Assistant
+              </h1>
+              <p
+                class="text-lg md:text-xl max-w-xl mx-auto md:mx-0 text-gray-600 mb-8"
+                data-key="heroSlogan"
+              >
+                Learn Deeper, Faster, Smarter. Unleash your potential and
+                conquer knowledge with a next-generation learning partner.
+              </p>
+              <a
+                href="donystudyai.netlify.app"
+                target="_blank"
+                class="bg-blue-600 text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 inline-block shadow-lg"
+                data-key="heroCTA"
+                >Start Learning for Free</a
+              >
+            </div>
+            <div class="hidden md:flex md:w-1/2 items-center justify-center">
+              <div class="ai-animation">
+                <!-- This will be populated by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-16 bg-white fade-in-section">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-gray-800"
+              data-key="featuresTitle"
+            >
+              All The Tools You Need To Succeed
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+              data-key="featuresSubtitle"
+            >
+              From solving complex assignments to building a study roadmap,
+              StudyDony AI is here to help.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+              <div class="text-3xl mb-4">💡</div>
+              <h3 class="text-xl font-bold mb-2" data-key="feature1Title">
+                Concept Explanation
+              </h3>
+              <p class="text-gray-600" data-key="feature1Desc">
+                Make the most complex topics easy to understand through visual
+                examples and simple explanations.
+              </p>
+              <div class="gemini-demo-card">
+                <label
+                  for="concept-input"
+                  class="font-semibold text-gray-700 block mb-2"
+                  data-key="demo1Label"
+                  >Try asking about a concept:</label
+                >
+                <div class="flex gap-2">
+                  <input
+                    type="text"
+                    id="concept-input"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    data-key-placeholder="demo1Placeholder"
+                  />
+                  <button
+                    id="concept-btn"
+                    class="btn-accent-1 font-semibold px-4 py-2 rounded-md flex items-center justify-center min-w-[120px]"
+                  >
+                    <span class="btn-text" data-key="demo1Button"
+                      >✨ Explain</span
+                    >
+                    <span class="loader hidden"></span>
+                  </button>
+                </div>
+                <div
+                  id="concept-output"
+                  class="mt-4 text-gray-600 bg-pink-50 p-4 rounded-md min-h-[50px]"
+                ></div>
+              </div>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+              <div class="text-3xl mb-4">👨‍💻</div>
+              <h3 class="text-xl font-bold mb-2" data-key="feature2Title">
+                Code Debugging & Optimization
+              </h3>
+              <p class="text-gray-600" data-key="feature2Desc">
+                Quickly find and fix coding errors. Get suggestions for
+                optimization and learn best programming practices.
+              </p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+              <div class="text-3xl mb-4">📚</div>
+              <h3 class="text-xl font-bold mb-2" data-key="feature3Title">
+                Document Search
+              </h3>
+              <p class="text-gray-600" data-key="feature3Desc">
+                Synthesize and summarize information from reputable academic
+                sources, saving you research time.
+              </p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+              <div class="text-3xl mb-4">🗺️</div>
+              <h3 class="text-xl font-bold mb-2" data-key="feature4Title">
+                Roadmap Building
+              </h3>
+              <p class="text-gray-600" data-key="feature4Desc">
+                Create personalized learning plans so you can conquer any skill
+                or subject.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subjects Section -->
+      <section id="subjects" class="py-20 fade-in-section">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-gray-800"
+              data-key="subjectsTitle"
+            >
+              Discover Subjects
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+              data-key="subjectsSubtitle"
+            >
+              From programming to mathematics, we have everything you need to
+              succeed.
+            </p>
+          </div>
+          <div class="flex justify-center flex-wrap gap-x-4 gap-y-2 mb-4">
+            <span class="preview-tag" data-key="previewTag">Preview</span>
+            <span class="preview-tag" data-key="previewTag">Preview</span>
+            <span class="preview-tag" data-key="previewTag">Preview</span>
+            <span class="preview-tag" data-key="previewTag">Preview</span>
+            <span class="preview-tag" data-key="previewTag">Preview</span>
+          </div>
+          <div
+            id="subject-tags-container"
+            class="flex justify-center flex-wrap gap-3 mb-12"
+          >
+            <button
+              class="subject-tag"
+              data-category="web"
+              data-key="tagWebDev"
+            >
+              Web Development
+            </button>
+            <button class="subject-tag" data-category="math" data-key="tagMath">
+              Mathematics
+            </button>
+            <button
+              class="subject-tag"
+              data-category="physics"
+              data-key="tagPhysics"
+            >
+              Physics
+            </button>
+            <button
+              class="subject-tag"
+              data-category="english"
+              data-key="tagEnglish"
+            >
+              English
+            </button>
+            <button
+              class="subject-tag"
+              data-category="competition"
+              data-key="tagCompetition"
+            >
+              Competition Mode
+            </button>
+          </div>
+          <div
+            id="subject-cards-grid"
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <!-- Subject cards will be dynamically inserted here by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Audience Section -->
+      <section id="audience" class="py-20 bg-white fade-in-section">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-gray-800"
+              data-key="audienceTitle"
+            >
+              Trusted by All Learners
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+              data-key="audienceSubtitle"
+            >
+              Whoever you are on your knowledge journey, we have a solution for
+              you.
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            <div class="w-full lg:w-1/3">
+              <div class="chart-container">
+                <canvas id="audienceChart"></canvas>
+              </div>
+            </div>
+            <div class="w-full lg:w-2/3">
+              <div class="mb-4 flex border-b border-gray-200">
+                <button
+                  class="tab-button flex-1 py-3 px-4 text-lg font-semibold text-gray-500 border-b-2 border-transparent transition-colors active"
+                  data-tab="1"
+                  data-key="audienceTab1"
+                >
+                  University
+                </button>
+                <button
+                  class="tab-button flex-1 py-3 px-4 text-lg font-semibold text-gray-500 border-b-2 border-transparent transition-colors"
+                  data-tab="2"
+                  data-key="audienceTab2"
+                >
+                  High School
+                </button>
+                <button
+                  class="tab-button flex-1 py-3 px-4 text-lg font-semibold text-gray-500 border-b-2 border-transparent transition-colors"
+                  data-tab="3"
+                  data-key="audienceTab3"
+                >
+                  Self-Learners
+                </button>
+              </div>
+              <div class="tab-content" id="tab-content-1">
+                <h3 class="text-2xl font-bold mb-3" data-key="audience1Title">
+                  For University Students
+                </h3>
+                <p class="text-gray-600 mb-4" data-key="audience1Desc">
+                  An indispensable partner for research projects, complex
+                  reports, and specialized subjects. Save hours on document
+                  searching and debugging to focus on deeper learning.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✔</span
+                    ><span data-key="audience1Feat1"
+                      >In-depth research support</span
+                    >
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✔</span
+                    ><span data-key="audience1Feat2"
+                      >Explains algorithms & theorems</span
+                    >
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✔</span
+                    ><span data-key="audience1Feat3"
+                      >Assists in scientific report writing</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content hidden" id="tab-content-2">
+                <h3 class="text-2xl font-bold mb-3" data-key="audience2Title">
+                  For High School Students
+                </h3>
+                <p class="text-gray-600 mb-4" data-key="audience2Desc">
+                  A companion to help solve difficult exercises, prepare for
+                  important exams, and explore future academic and career paths.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✔</span
+                    ><span data-key="audience2Feat1"
+                      >Solves Math, Physics, Chemistry problems</span
+                    >
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✔</span
+                    ><span data-key="audience2Feat2"
+                      >Systematizes knowledge for exams</span
+                    >
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✔</span
+                    ><span data-key="audience2Feat3"
+                      >Explores and orients study majors</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content hidden" id="tab-content-3">
+                <h3 class="text-2xl font-bold mb-3" data-key="audience3Title">
+                  For Self-Learners
+                </h3>
+                <p class="text-gray-600 mb-4" data-key="audience3Desc">
+                  Build flexible learning roadmaps, provide quality resources,
+                  and maintain motivation for you to effectively conquer any new
+                  skill.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✔</span
+                    ><span data-key="audience3Feat1"
+                      >Creates roadmaps for new skills</span
+                    >
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✔</span
+                    ><span data-key="audience3Feat2"
+                      >Maintains daily learning motivation</span
+                    >
+                  </li>
+                  <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✔</span
+                    ><span data-key="audience3Feat3"
+                      >Practice through real-world projects</span
+                    >
+                  </li>
+                </ul>
+                <div class="gemini-demo-card">
+                  <label
+                    for="roadmap-input"
+                    class="font-semibold text-gray-700 block mb-2"
+                    data-key="demo2Label"
+                    >What skill do you want to learn?</label
+                  >
+                  <div class="flex gap-2">
+                    <input
+                      type="text"
+                      id="roadmap-input"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                      data-key-placeholder="demo2Placeholder"
+                    />
+                    <button
+                      id="roadmap-btn"
+                      class="btn-accent-2 text-white font-semibold px-4 py-2 rounded-md flex items-center justify-center min-w-[120px]"
+                    >
+                      <span class="btn-text" data-key="demo2Button"
+                        >✨ Create Roadmap</span
+                      >
+                      <span class="loader hidden"></span>
+                    </button>
+                  </div>
+                  <div
+                    id="roadmap-output"
+                    class="mt-4 text-gray-600 bg-teal-50 p-4 rounded-md min-h-[50px]"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="about-us" class="py-20 fade-in-section">
+        <div class="container mx-auto px-6 text-center">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-gray-800"
+            data-key="aboutUsTitle"
+          >
+            Meet Our Team
+          </h2>
+          <p
+            class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+            data-key="aboutUsSubtitle"
+          >
+            The passionate minds behind making learning accessible to everyone.
+          </p>
+          <div
+            class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          >
+            <!-- Team Member 1 -->
+            <div class="text-center">
+              <img
+                src="https://placehold.co/150x150/EC4899/FFFFFF?text=Dony"
+                alt="Team Member 1"
+                class="w-36 h-36 rounded-full mx-auto mb-4 border-4 border-pink-200"
+              />
+              <h3 class="text-xl font-bold" data-key="teamMember1Name">Dony</h3>
+              <p class="text-gray-500" data-key="teamMember1Role">
+                Founder & Lead Developer
+              </p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="text-center">
+              <img
+                src="https://placehold.co/150x150/2DD4BF/FFFFFF?text=AI"
+                alt="Team Member 2"
+                class="w-36 h-36 rounded-full mx-auto mb-4 border-4 border-teal-200"
+              />
+              <h3 class="text-xl font-bold" data-key="teamMember2Name">
+                Gemini
+              </h3>
+              <p class="text-gray-500" data-key="teamMember2Role">
+                AI Co-Pilot
+              </p>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="text-center">
+              <img
+                src="https://placehold.co/150x150/A78BFA/FFFFFF?text=You"
+                alt="Team Member 3"
+                class="w-36 h-36 rounded-full mx-auto mb-4 border-4 border-purple-200"
+              />
+              <h3 class="text-xl font-bold" data-key="teamMember3Name">You</h3>
+              <p class="text-gray-500" data-key="teamMember3Role">
+                Valued User & Contributor
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <!-- Để hiện lại mục Bảng giá, hãy xóa class "hidden" ở thẻ section ngay bên dưới -->
+      <section id="pricing" class="py-20 fade-in-section hidden">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-gray-800"
+              data-key="pricingTitle"
+            >
+              Choose Your Plan
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+              data-key="pricingSubtitle"
+            >
+              Simple, transparent pricing for every type of learner.
+            </p>
+          </div>
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
+          >
+            <!-- Free Plan -->
+            <div class="pricing-card bg-white p-8 flex flex-col">
+              <h3 class="text-2xl font-bold mb-2" data-key="plan1Name">Free</h3>
+              <p class="text-gray-500 mb-6" data-key="plan1Desc">
+                For casual learners and to try our platform.
+              </p>
+              <p class="text-4xl font-extrabold mb-6">
+                $0
+                <span
+                  class="text-lg font-medium text-gray-500"
+                  data-key="planPerMonth"
+                  >/ month</span
+                >
+              </p>
+              <ul class="space-y-3 text-gray-600 mb-8 flex-grow">
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-3">✔</span
+                  ><span data-key="plan1Feat1">20 messages per day</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-3">✔</span
+                  ><span data-key="plan1Feat2">Standard AI model</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-3">✔</span
+                  ><span data-key="plan1Feat3">Community support</span>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="w-full text-center bg-gray-200 text-gray-800 font-bold py-3 rounded-lg hover:bg-gray-300 transition-colors"
+                data-key="planButton"
+                >Get Started</a
+              >
+            </div>
+            <!-- Pro Plan (Popular) -->
+            <div class="pricing-card bg-white p-8 flex flex-col popular">
+              <div class="text-right mb-2">
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full"
+                  data-key="planPopular"
+                  >POPULAR</span
+                >
+              </div>
+              <h3 class="text-2xl font-bold mb-2" data-key="plan2Name">Pro</h3>
+              <p class="text-gray-500 mb-6" data-key="plan2Desc">
+                For dedicated students and professionals.
+              </p>
+              <p class="text-4xl font-extrabold mb-6">
+                $10
+                <span
+                  class="text-lg font-medium text-gray-500"
+                  data-key="planPerMonth"
+                  >/ month</span
+                >
+              </p>
+              <ul class="space-y-3 text-gray-600 mb-8 flex-grow">
+                <li class="flex items-center">
+                  <span class="text-blue-500 mr-3">✔</span
+                  ><span data-key="plan2Feat1">Unlimited messages</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-blue-500 mr-3">✔</span
+                  ><span data-key="plan2Feat2">Advanced AI model</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-blue-500 mr-3">✔</span
+                  ><span data-key="plan2Feat3">Priority support</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-blue-500 mr-3">✔</span
+                  ><span data-key="plan2Feat4">Conversation history</span>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="w-full text-center bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                data-key="planButton"
+                >Get Started</a
+              >
+            </div>
+            <!-- Premium Plan -->
+            <div class="pricing-card bg-white p-8 flex flex-col">
+              <h3 class="text-2xl font-bold mb-2" data-key="plan3Name">
+                Premium
+              </h3>
+              <p class="text-gray-500 mb-6" data-key="plan3Desc">
+                For teams and educational institutions.
+              </p>
+              <p class="text-4xl font-extrabold mb-6" data-key="plan3Price">
+                Contact Us
+              </p>
+              <ul class="space-y-3 text-gray-600 mb-8 flex-grow">
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-3">✔</span
+                  ><span data-key="plan3Feat1">Everything in Pro</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-3">✔</span
+                  ><span data-key="plan3Feat2">Team management</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-3">✔</span
+                  ><span data-key="plan3Feat3">Custom integrations</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-500 mr-3">✔</span
+                  ><span data-key="plan3Feat4">Dedicated support</span>
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="w-full text-center bg-gray-200 text-gray-800 font-bold py-3 rounded-lg hover:bg-gray-300 transition-colors"
+                data-key="planContactButton"
+                >Contact Sales</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Persona / Testimonial Section -->
+      <section class="py-20 bg-white fade-in-section">
+        <div class="container mx-auto px-6">
+          <div
+            class="bg-blue-600 rounded-2xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-8"
+          >
+            <img
+              src="https://placehold.co/150x150/EBF4FF/4A5568?text=Aoi+N."
+              alt="Nakamura Aoi"
+              class="w-24 h-24 md:w-36 md:h-36 rounded-full border-4 border-white object-cover"
+            />
+            <div class="text-center md:text-left">
+              <p
+                class="text-xl md:text-2xl font-medium leading-relaxed"
+                data-key="testimonialQuote"
+              >
+                "StudyDony AI completely changed how I learn. Instead of
+                spending hours debugging a small code error, I now get a
+                solution in minutes. It's truly the smart learning partner I've
+                always wished for."
+              </p>
+              <p class="mt-4 font-bold text-lg" data-key="testimonialName">
+                Nakamura Aoi
+              </p>
+              <p class="text-blue-200" data-key="testimonialRole">
+                2nd Year Student, Information Technology
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="py-20 fade-in-section">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-gray-800"
+              data-key="faqTitle"
+            >
+              Frequently Asked Questions
+            </h2>
+            <p class="mt-4 text-lg text-gray-600" data-key="faqSubtitle">
+              All your questions will be answered here.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div
+              class="faq-item bg-white p-5 rounded-lg border border-gray-200 shadow-sm"
+            >
+              <button
+                class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold"
+              >
+                <span data-key="faq1Question">Is StudyDony AI free?</span>
+                <span
+                  class="faq-icon text-xl text-blue-600 transform transition-transform"
+                  >+</span
+                >
+              </button>
+              <div
+                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+              >
+                <p class="pt-4 text-gray-600" data-key="faq1Answer">
+                  Yes! We offer a generous free plan for you to experience the
+                  core features. For more advanced needs, we have paid plans
+                  with superior features.
+                </p>
+              </div>
+            </div>
+            <div
+              class="faq-item bg-white p-5 rounded-lg border border-gray-200 shadow-sm"
+            >
+              <button
+                class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold"
+              >
+                <span data-key="faq2Question">Is my data secure?</span>
+                <span
+                  class="faq-icon text-xl text-blue-600 transform transition-transform"
+                  >+</span
+                >
+              </button>
+              <div
+                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+              >
+                <p class="pt-4 text-gray-600" data-key="faq2Answer">
+                  Security is our top priority. All conversations are encrypted.
+                  We are committed to not sharing your personal data with any
+                  third party.
+                </p>
+              </div>
+            </div>
+            <div
+              class="faq-item bg-white p-5 rounded-lg border border-gray-200 shadow-sm"
+            >
+              <button
+                class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold"
+              >
+                <span data-key="faq3Question"
+                  >Which programming languages does the AI support?</span
+                >
+                <span
+                  class="faq-icon text-xl text-blue-600 transform transition-transform"
+                  >+</span
+                >
+              </button>
+              <div
+                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+              >
+                <p class="pt-4 text-gray-600" data-key="faq3Answer">
+                  Our AI is trained on a massive dataset and can support most
+                  popular programming languages today, including Python,
+                  JavaScript, Java, C++, Ruby, and more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA Section -->
+      <section class="py-20 bg-white fade-in-section">
+        <div class="container mx-auto px-6 text-center">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
+            data-key="finalCtaTitle"
+          >
+            Ready to Elevate Your Learning?
+          </h2>
+          <p
+            class="text-lg md:text-xl max-w-2xl mx-auto text-gray-600 mb-8"
+            data-key="finalCtaSubtitle"
+          >
+            Join thousands of other learners and experience the future of
+            education today.
+          </p>
+          <a
+            href="donystudyai.netlify.app"
+            target="_blank"
+            class="bg-blue-600 text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 inline-block shadow-lg"
+            data-key="finalCtaButton"
+            >Try for Free</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+      <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-lg font-bold mb-4" data-key="appName">
+              🎓 StudyDony AI
+            </h3>
+            <p class="text-gray-400" data-key="footerSlogan">
+              Learn Deeper, Faster, Smarter.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4" data-key="footerLinks">Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#features"
+                  class="text-gray-400 hover:text-white"
+                  data-key="navFeatures"
+                  >Features</a
+                >
+              </li>
+              <!-- Để hiện lại mục Bảng giá, hãy xóa class "hidden" ở thẻ <li> ngay bên dưới -->
+              <li class="hidden">
+                <a
+                  href="#pricing"
+                  class="text-gray-400 hover:text-white"
+                  data-key="navPricing"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  class="text-gray-400 hover:text-white"
+                  data-key="navFAQ"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4" data-key="footerSubscribe">
+              Subscribe to our newsletter
+            </h3>
+            <p class="text-gray-400 mb-4" data-key="footerSubscribeDesc">
+              Get the latest news and updates from our team.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                class="w-full rounded-l-lg px-4 py-2 text-gray-800"
+                data-key-placeholder="footerEmailPlaceholder"
+              />
+              <button
+                type="submit"
+                class="btn-accent-1 px-4 py-2 rounded-r-lg font-semibold"
+                data-key="footerSubscribeButton"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm"
+        >
+          <p class="text-gray-400" data-key="footerRights">
+            © 2025 StudyDony AI. All rights reserved.
+          </p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white"
+              data-key="footerPrivacy"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white"
+              data-key="footerTerms"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Link to external JS file -->
+    <script src="script.js"></script>
+  </body>
+</html>
