@@ -31,7 +31,46 @@ body {
   background-color: #f9fafb;
   color: #1f2937;
 }
+/* =============================================
+   CUSTOM CONTAINER LOGIC
+   =============================================
+   Đảm bảo layout container hiển thị nhất quán ở mọi nơi,
+   bất kể môi trường local hay live server.
+*/
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.5rem; /* 24px */
+  padding-left: 1.5rem; /* 24px */
+}
 
+/* Các điểm dừng (breakpoint) cho màn hình lớn hơn */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
 /* ===== 2. Layout & General Utilities ===== */
 /* Các lớp tiện ích chung cho bố cục và hiệu ứng */
 
