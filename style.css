@@ -1,3 +1,23 @@
+/* =============================================
+   TABLE OF CONTENTS
+   =============================================
+   1. Global Styles & Variables
+   2. Layout & General Utilities
+   3. Components
+      - Buttons
+      - Demo Cards & Loaders
+      - Pricing Cards
+   4. Sections
+      - Hero Section (Animated Title & AI Animation)
+      - Subjects Section (Tags & Cards)
+      - Audience Section (Chart & Tabs)
+      - Testimonial Section (Swiper Carousel)
+   5. Keyframe Animations
+============================================= */
+
+/* ===== 1. Global Styles & Variables ===== */
+/* Định nghĩa các biến màu và font chữ chính cho toàn bộ trang */
+
 :root {
   --color-primary: #3b82f6; /* Blue */
   --color-accent-1: #ec4899; /* Magenta */
@@ -5,34 +25,50 @@
   --color-accent-2: #2dd4bf; /* Teal */
   --color-accent-2-hover: #14b8a6; /* Darker Teal */
 }
+
 body {
   font-family: "Inter", "Noto Sans JP", sans-serif;
   background-color: #f9fafb;
   color: #1f2937;
 }
+
+/* ===== 2. Layout & General Utilities ===== */
+/* Các lớp tiện ích chung cho bố cục và hiệu ứng */
+
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
-.chart-container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  max-height: 400px;
+
+/* ===== 3. Components ===== */
+/* Style cho các thành phần tái sử dụng trên trang */
+
+/* --- Buttons --- */
+.btn-accent-1 {
+  background-color: var(--color-accent-1);
+  color: white;
+  transition: background-color 0.2s ease;
 }
-.tab-button.active {
-  border-color: var(--color-primary);
-  background-color: #eff6ff;
-  color: var(--color-primary);
+.btn-accent-1:hover {
+  background-color: var(--color-accent-1-hover);
 }
+
+.btn-accent-2 {
+  background-color: var(--color-accent-2);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+.btn-accent-2:hover {
+  background-color: var(--color-accent-2-hover);
+}
+
+/* --- Demo Cards & Loaders --- */
 .gemini-demo-card {
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
@@ -41,6 +77,7 @@ body {
   margin-top: 1.5rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
+
 .loader {
   width: 24px;
   height: 24px;
@@ -49,52 +86,40 @@ body {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.subject-tag {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  background-color: #e5e7eb;
-  color: #4b5563;
-  transition: all 0.2s ease-in-out;
-  border: 2px solid transparent;
-}
-.subject-tag:hover {
-  background-color: #d1d5db;
-}
-.subject-tag.active {
-  background-color: #eff6ff;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-.subject-card {
-  background-color: white;
-  border-radius: 0.75rem;
+
+/* --- Pricing Cards --- */
+.pricing-card {
   border: 1px solid #e5e7eb;
-  padding: 1.5rem;
+  border-radius: 0.75rem;
   transition: all 0.3s ease-in-out;
 }
-.subject-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+.pricing-card.popular {
+  border-color: var(--color-primary);
+  border-width: 2px;
+  transform: scale(1.05);
 }
-.preview-tag {
-  background-color: #fce7f3;
-  color: var(--color-accent-1);
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  display: inline-block;
+
+/* ===== 4. Sections ===== */
+/* Style cho từng section cụ thể của trang */
+
+/* --- Hero Section --- */
+.hero-title-animated {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-1),
+    var(--color-accent-2),
+    var(--color-primary),
+    var(--color-accent-1)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-pulse 7s ease-in-out infinite;
 }
+
 .ai-animation {
   width: 200px;
   height: 200px;
@@ -110,6 +135,236 @@ body {
 .ai-animation .pulse {
   animation: pulse 2s infinite ease-in-out;
 }
+
+/* --- Subjects Section --- */
+.subject-tag {
+  position: relative; /* Cần cho hiệu ứng nền trượt */
+  overflow: hidden; /* Ẩn phần nền đang chờ trượt vào */
+  cursor: pointer;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  background-color: #e5e7eb;
+  color: #4b5563;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  z-index: 1;
+}
+.subject-tag:hover {
+  background-color: #d1d5db;
+}
+
+/* Hiệu ứng nền trượt cho nút active */
+.subject-tag::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
+  transform: translateX(-101%); /* Ẩn nền về phía trái */
+  transition: transform 0.4s cubic-bezier(0.7, 0, 0.25, 1);
+  z-index: -1; /* Đảm bảo nền nằm dưới chữ */
+}
+.subject-tag.active {
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #e5e7eb; /* Giữ nền xám để thấy hiệu ứng trượt */
+}
+.subject-tag.active::after {
+  transform: translateX(0); /* Đưa nền trượt vào */
+}
+
+.subject-card {
+  position: relative; /* Cần cho việc định vị tag con */
+  padding: 2.75rem 1.25rem 1.25rem; /* Tăng padding trên để có chỗ cho tag */
+  background-color: white;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+.subject-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.07),
+    0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+.subject-card .preview-tag-card {
+  position: absolute;
+  top: 0.75rem;
+  left: 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Ẩn tag preview cũ (nếu còn) */
+.preview-tag {
+  display: none;
+}
+
+/* --- Audience Section --- */
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  height: auto;
+  max-height: 400px;
+}
+
+.tab-button.active {
+  border-color: var(--color-primary);
+  background-color: #eff6ff;
+  color: var(--color-primary);
+}
+
+/* --- Testimonial Section --- */
+.testimonial-swiper {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 3rem; /* Giảm padding dưới */
+}
+
+/* --- Thiết kế cho từng Slide (Phiên bản nhỏ gọn) --- */
+.testimonial-slide {
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  padding: 1.5rem; /* Giảm padding tổng thể để slide nhỏ hơn */
+  height: auto;
+  display: flex;
+}
+
+/* --- Icon Trích Dẫn (Nhỏ hơn) --- */
+.testimonial-quote-icon {
+  position: absolute;
+  top: 0.25rem;
+  left: 1rem;
+  font-size: 6rem; /* Giảm kích thước icon */
+  line-height: 1;
+  color: var(--color-primary);
+  opacity: 0.07;
+  z-index: 1;
+  user-select: none;
+}
+
+.testimonial-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* --- Lời trích dẫn (chữ nhỏ hơn) --- */
+.testimonial-content .quote {
+  font-size: 1rem; /* 16px - Giảm kích thước chữ */
+  font-weight: 500;
+  line-height: 1.7;
+  color: #374151;
+  font-style: italic;
+  margin-bottom: 1.5rem; /* Giảm khoảng cách */
+}
+
+/* --- Thông tin tác giả (nhỏ hơn) --- */
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Giảm khoảng cách */
+}
+
+.author-info img {
+  width: 3rem; /* 48px - Giảm kích thước ảnh */
+  height: 3rem; /* 48px */
+  border-radius: 9999px;
+  border: 2px solid var(--color-accent-2); /* Giảm độ dày viền */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.author-info .font-bold {
+  font-size: 1rem; /* Chỉnh lại kích thước tên tác giả */
+}
+.author-info .text-gray-500 {
+  font-size: 0.875rem; /* Chỉnh lại kích thước vai trò */
+}
+
+/* --- Loại bỏ 2 nút mũi tên < > --- */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+/* --- Style cho các nút tròn phân trang --- */
+.swiper-pagination {
+  bottom: 0px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-primary) !important;
+}
+/* --- Các nút điều hướng của Swiper --- */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary) !important;
+  transform: translateY(-20px); /* Nâng các nút lên một chút */
+}
+
+.swiper-pagination {
+  bottom: 0px !important; /* Đưa các nút tròn xuống dưới cùng */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-primary) !important;
+}
+/* Responsive cho Testimonial */
+@media (min-width: 768px) {
+  .testimonial-slide {
+    flex-direction: row;
+    padding: 3rem;
+  }
+  .testimonial-slide img {
+    width: 9rem;
+    height: 9rem;
+  }
+  .testimonial-slide .quote {
+    text-align: left;
+  }
+}
+/* Style cho các nút của Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary) !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--color-primary) !important;
+}
+
+/* ===== 5. Keyframe Animations ===== */
+/* Định nghĩa các animation dùng trong trang */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes pulse {
   0%,
   100% {
@@ -121,27 +376,58 @@ body {
     opacity: 0.7;
   }
 }
-.pricing-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
-  transition: all 0.3s ease-in-out;
+
+@keyframes gradient-pulse {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
 }
-.pricing-card.popular {
-  border-color: var(--color-primary);
-  border-width: 2px;
+/* =============================================
+   COMPONENT: Animated Call-to-Action Buttons
+   ============================================= */
+
+.cta-button-animated {
+  /* Áp dụng animation thở (pulsing glow) */
+  animation: pulse-glow 2.5s infinite cubic-bezier(0.66, 0, 0, 1);
+
+  /* Thêm transition để các hiệu ứng hover mượt mà */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Đảm bảo nút không bị các thành phần khác che khuất */
+  position: relative;
+  z-index: 10;
+}
+
+/* Hiệu ứng khi di chuột vào */
+.cta-button-animated:hover {
+  /* Dừng animation thở lại khi hover để tập trung vào hiệu ứng scale */
+  animation-play-state: paused;
+
+  /* Tạo một vầng sáng mạnh mẽ và rõ ràng hơn */
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6), 0 0 10px rgba(236, 72, 153, 0.4);
+
+  /* Giữ lại hiệu ứng phóng to đã có */
   transform: scale(1.05);
 }
-.btn-accent-1 {
-  background-color: var(--color-accent-1);
-  color: white;
-}
-.btn-accent-1:hover {
-  background-color: var(--color-accent-1-hover);
-}
-.btn-accent-2 {
-  background-color: var(--color-accent-2);
-  color: white;
-}
-.btn-accent-2:hover {
-  background-color: var(--color-accent-2-hover);
+
+/* --- Định nghĩa animation "thở" --- */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
 }

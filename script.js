@@ -1,9 +1,32 @@
+// script.js
+
+// Dữ liệu mới cho testimonials
+const testimonials = [
+  {
+    img: "https://placehold.co/150x150/EBF4FF/4A5568?text=Aoi+N.",
+    quoteKey: "testimonialQuote1",
+    nameKey: "testimonialName1",
+    roleKey: "testimonialRole1",
+  },
+  {
+    img: "https://placehold.co/150x150/D1FAE5/10B981?text=Bao+L.",
+    quoteKey: "testimonialQuote2",
+    nameKey: "testimonialName2",
+    roleKey: "testimonialRole2",
+  },
+  {
+    img: "https://placehold.co/150x150/FEF3C7/F59E0B?text=Kenji+T.",
+    quoteKey: "testimonialQuote3",
+    nameKey: "testimonialName3",
+    roleKey: "testimonialRole3",
+  },
+];
 const translations = {
   vi: {
-    title: "Trợ Lý Học Thuật AI - Học Sâu Hơn, Nhanh Hơn, Thông Minh Hơn",
+    title: "DonyStudy - Học Sâu Hơn, Nhanh Hơn, Thông Minh Hơn",
     metaDescription:
-      "DonyStudy AI là trợ lý học thuật cá nhân của bạn, giúp bạn giải thích khái niệm, gỡ lỗi code, và xây dựng lộ trình học tập. Học sâu hơn, nhanh hơn, và thông minh hơn với AI.",
-    ogTitle: "DonyStudy AI - Trợ Lý Học Thuật Cá Nhân Của Bạn",
+      "DonyStudy là trợ lý học thuật cá nhân của bạn, giúp bạn giải thích khái niệm, gỡ lỗi code, và xây dựng lộ trình học tập. Học sâu hơn, nhanh hơn, và thông minh hơn với AI.",
+    ogTitle: "DonyStudy - Trợ Lý Học Thuật Cá Nhân Của Bạn",
     ogDescription:
       "Học Sâu Hơn, Nhanh Hơn, Thông Minh Hơn. Khơi dậy tiềm năng, chinh phục tri thức cùng đối tác học tập thế hệ mới.",
     // appName: "DonyStudy AI",
@@ -151,13 +174,23 @@ const translations = {
     plan3Feat3: "Tích hợp tùy chỉnh",
     plan3Feat4: "Hỗ trợ riêng",
     planContactButton: "Liên Hệ Kinh Doanh",
-    testimonialQuote:
-      '"DonyStudy AI đã thay đổi hoàn toàn cách tôi học. Thay vì mất hàng giờ để debug một lỗi code nhỏ, giờ tôi có thể nhận được giải pháp chỉ trong vài phút. Nó thực sự là một đối tác học tập thông minh mà tôi luôn ao ước."',
-    testimonialName: "Nakamura Aoi",
-    testimonialRole: "Sinh viên năm 2, ngành Công nghệ Thông tin",
+    testimonialTitle: "Người Dùng Nói Gì Về Chúng Tôi",
+    testimonialSubtitle: "Trải nghiệm thực tế từ người dùng thực tế.",
+    testimonialQuote1:
+      "DonyStudy AI đã thay đổi hoàn toàn cách tôi học. Thay vì mất hàng giờ để debug một lỗi code nhỏ, giờ tôi có thể nhận được giải pháp chỉ trong vài phút. Nó thực sự là một đối tác học tập thông minh mà tôi luôn ao ước.",
+    testimonialName1: "Nakamura Aoi",
+    testimonialRole1: "Sinh viên năm 2, ngành Công nghệ Thông tin",
+    testimonialQuote2:
+      '"Là một học sinh cuối cấp, việc ôn tập cho các kỳ thi lớn rất áp lực. DonyStudy AI giúp mình hệ thống hóa kiến thức Vật lý và giải các bài tập khó một cách trực quan, tiết kiệm rất nhiều thời gian."',
+    testimonialName2: "Lê Minh Bảo",
+    testimonialRole2: "Học sinh lớp 12, chuyên Lý",
+    testimonialQuote3:
+      '"Tôi dùng DonyStudy để học một kỹ năng mới là Lập trình Web. Tính năng tạo lộ trình học tập cực kỳ hữu ích, nó cho tôi một con đường rõ ràng để đi từ con số không. Rất khuyến khích cho người tự học!"',
+    testimonialName3: "Tanaka Kenji",
+    testimonialRole3: "Content Creator & Người tự học",
     faqTitle: "Các Câu Hỏi Thường Gặp",
     faqSubtitle: "Mọi thắc mắc của bạn đều sẽ được giải đáp tại đây.",
-    faq1Question: "DonyStudy AI có miễn phí không?",
+    faq1Question: "DonyStudy có miễn phí không?",
     faq1Answer:
       "Có! Chúng tôi cung cấp một gói miễn phí hào phóng để bạn có thể trải nghiệm các tính năng cốt lõi. Đối với các nhu cầu nâng cao hơn, chúng tôi có các gói trả phí với nhiều tính năng vượt trội.",
     faq2Question: "Dữ liệu của tôi có được bảo mật không?",
@@ -181,10 +214,10 @@ const translations = {
     footerTerms: "Điều khoản Dịch vụ",
   },
   en: {
-    title: "AI Academic Assistant - Learn Deeper, Faster, Smarter",
+    title: "DonyStudy - Learn Deeper, Faster, Smarter",
     metaDescription:
-      "DonyStudy AI is your personal academic assistant, helping you explain concepts, debug code, and build learning roadmaps. Learn deeper, faster, and smarter with AI.",
-    ogTitle: "DonyStudy AI - Your Personal Academic Assistant",
+      "DonyStudy is your personal academic assistant, helping you explain concepts, debug code, and build learning roadmaps. Learn deeper, faster, and smarter with AI.",
+    ogTitle: "DonyStudy - Your Personal Academic Assistant",
     ogDescription:
       "Learn Deeper, Faster, Smarter. Unleash your potential and conquer knowledge with a next-generation learning partner.",
     // appName: "🎓 DonyStudy AI",
@@ -335,10 +368,20 @@ const translations = {
     plan3Feat3: "Custom integrations",
     plan3Feat4: "Dedicated support",
     planContactButton: "Contact Sales",
-    testimonialQuote:
-      "\"DonyStudy AI completely changed how I learn. Instead of spending hours debugging a small code error, I now get a solution in minutes. It's truly the smart learning partner I've always wished for.\"",
-    testimonialName: "Nakamura Aoi",
-    testimonialRole: "2nd Year Student, Information Technology",
+    testimonialTitle: "What Our Users Say",
+    testimonialSubtitle: "Real experiences from real users.",
+    testimonialQuote1:
+      "DonyStudy AI completely changed how I learn. Instead of spending hours debugging a small code error, I now get a solution in minutes. It's truly the smart learning partner I've always wished for.",
+    testimonialName1: "Nakamura Aoi",
+    testimonialRole1: "2nd Year Student, Information Technology",
+    testimonialQuote2:
+      '"As a senior high school student, reviewing for major exams is stressful. DonyStudy AI helps me systematize my Physics knowledge and solve difficult problems visually, saving a ton of time."',
+    testimonialName2: "Bao Le Minh",
+    testimonialRole2: "12th Grade Student, Physics Major",
+    testimonialQuote3:
+      '"I use DonyStudy AI to learn a new skill: Web Development. The roadmap generation feature is incredibly useful; it gives me a clear path to follow from scratch. Highly recommended for self-learners!"',
+    testimonialName3: "Kenji Tanaka",
+    testimonialRole3: "Content Creator & Self-Learner",
     faqTitle: "Frequently Asked Questions",
     faqSubtitle: "All your questions will be answered here.",
     faq1Question: "Is DonyStudy AI free?",
@@ -365,10 +408,10 @@ const translations = {
     footerTerms: "Terms of Service",
   },
   ja: {
-    title: "AI学習アシスタント - より深く、より速く、より賢く学ぶ",
+    title: "DonyStudy - より深く、より速く、より賢く学ぶ",
     metaDescription:
-      "DonyStudy AIは、概念の説明、コードのデバッグ、学習ロードマップの作成を支援する、あなたのパーソナル学習アシスタントです。AIでより深く、より速く、より賢く学びましょう。",
-    ogTitle: "DonyStudy AI - あなたのパーソナル学習アシスタント",
+      "DonyStudyは、概念の説明、コードのデバッグ、学習ロードマップの作成を支援する、あなたのパーソナル学習アシスタントです。AIでより深く、より速く、より賢く学びましょう。",
+    ogTitle: "DonyStudy - あなたのパーソナル学習アシスタント",
     ogDescription:
       "より深く、より速く、より賢く学ぶ。次世代の学習パートナーと共に、あなたの可能性を解き放ち、知識を征服しましょう。",
     // appName: "🎓 DonyStudy AI",
@@ -511,10 +554,20 @@ const translations = {
     plan3Feat3: "カスタム統合",
     plan3Feat4: "専用サポート",
     planContactButton: "営業へのお問い合わせ",
-    testimonialQuote:
+    testimonialTitle: "ユーザーの声",
+    testimonialSubtitle: "実際のユーザーからの実体験。",
+    testimonialQuote1:
       "「DonyStudy AIは私の学習方法を完全に変えました。小さなコードエラーのデバッグに何時間も費やす代わりに、数分で解決策を得られるようになりました。私がずっと望んでいたスマートな学習パートナーです。」",
-    testimonialName: "中村あおい",
-    testimonialRole: "情報技術学部 2年生",
+    testimonialName1: "中村あおい",
+    testimonialRole1: "情報技術学部 2年生",
+    testimonialQuote2:
+      "高校三年生として、主要な試験の準備はストレスがたまります。DonyStudy AIは物理の知識を体系化し、難しい問題を視覚的に解決するのに役立ち、多くの時間を節約してくれます。」",
+    testimonialName2: "レ・ミン・バオ",
+    testimonialRole2: "高校12年生、物理専攻",
+    testimonialQuote3:
+      "「私は新しいスキル、ウェブ開発を学ぶためにDonyStudy AIを使っています。ロードマップ生成機能は非常に便利で、ゼロから進むべき明確な道を示してくれます。独学者に強くお勧めします！",
+    testimonialName3: "田中健司",
+    testimonialRole3: "コンテンツクリエーター＆独学者",
     faqTitle: "よくある質問",
     faqSubtitle: "あなたのすべての質問はここで解決されます。",
     faq1Question: "DonyStudy AIは無料ですか？",
@@ -660,6 +713,66 @@ document.addEventListener("DOMContentLoaded", () => {
   const subjectTagsContainer = document.getElementById(
     "subject-tags-container"
   );
+  const testimonialWrapper = document.getElementById("testimonial-wrapper");
+
+  function renderTestimonials() {
+    testimonialWrapper.innerHTML = ""; // Xóa các slide cũ
+    testimonials.forEach((testimonial) => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide testimonial-slide";
+
+      const quote =
+        translations[currentLang][testimonial.quoteKey] || testimonial.quoteKey;
+      const name =
+        translations[currentLang][testimonial.nameKey] || testimonial.nameKey;
+      const role =
+        translations[currentLang][testimonial.roleKey] || testimonial.roleKey;
+
+      // Code HTML mới cho mỗi slide, có thêm icon trích dẫn
+      slide.innerHTML = `
+            
+            <div class="testimonial-content">
+                <p class="quote">"${quote}"</p>
+                <div class="author-info">
+                    <img src="${testimonial.img}" alt="${name}" />
+                    <div>
+                        <p class="font-bold text-lg text-gray-800">${name}</p>
+                        <p class="text-gray-500">${role}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+      testimonialWrapper.appendChild(slide);
+    });
+  }
+
+  const testimonialSwiper = new Swiper(".testimonial-swiper", {
+    // Tùy chọn
+    loop: true, // Lặp lại vô hạn
+    autoplay: {
+      delay: 5000, // Tự động trượt sau mỗi 5 giây
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // Ghi đè hàm updateContent để render lại testimonial và cập nhật swiper
+  const originalUpdateContent = updateContent;
+  updateContent = (lang) => {
+    originalUpdateContent(lang); // Chạy hàm gốc
+    renderTestimonials(); // Render lại nội dung testimonial
+    testimonialSwiper.update(); // Cập nhật Swiper để nhận slide mới
+  };
+
+  // Render lần đầu khi tải trang
+  renderTestimonials();
 
   function renderSubjectCards(category) {
     const cardsData = subjectData[category] || [];
@@ -667,17 +780,21 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsData.forEach((card) => {
       const cardElement = document.createElement("div");
       cardElement.className = "subject-card";
+
+      // Lấy bản dịch cho tag "Preview"
+      const previewText = translations[currentLang].previewTag || "Preview";
+
+      // Tạo HTML mới với tag "Preview" đã được định vị
       cardElement.innerHTML = `
-                  <div class="text-3xl mb-3">${card.icon}</div>
-                  <h3 class="text-xl font-bold mb-2" data-key="${
-                    card.titleKey
-                  }">${
+        <span class="preview-tag-card">${previewText}</span>
+        <div class="text-3xl mb-3">${card.icon}</div>
+        <h3 class="text-xl font-bold mb-2" data-key="${card.titleKey}">${
         translations[currentLang][card.titleKey] || card.titleKey
       }</h3>
-                  <p class="text-gray-600" data-key="${card.descKey}">${
+        <p class="text-gray-600" data-key="${card.descKey}">${
         translations[currentLang][card.descKey] || card.descKey
       }</p>
-              `;
+    `;
       subjectCardsGrid.appendChild(cardElement);
     });
   }
