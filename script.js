@@ -212,6 +212,9 @@ const translations = {
     footerSlogan: "Học Sâu Hơn, Nhanh Hơn, Thông Minh Hơn.",
     footerPrivacy: "Chính sách Bảo mật",
     footerTerms: "Điều khoản Dịch vụ",
+    // AI Prompts
+    conceptPrompt: 'Giải thích khái niệm "{userInput}" một cách đơn giản trong một đoạn văn ngắn, phù hợp cho học sinh.',
+    roadmapPrompt: 'Tạo lộ trình học tập đơn giản gồm 4 bước cho người muốn học "{userInput}". Mỗi bước nên là một câu ngắn gọn, có thể thực hiện được. Trình bày dưới dạng danh sách đánh số (ví dụ: 1. Bước đầu tiên...).',
   },
   en: {
     title: "DonyStudy - Learn Deeper, Faster, Smarter",
@@ -406,6 +409,9 @@ const translations = {
     footerSlogan: "Learn Deeper, Faster, Smarter.",
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms of Service",
+    // AI Prompts
+    conceptPrompt: 'Explain the concept of "{userInput}" in a simple, single paragraph, suitable for a student.',
+    roadmapPrompt: 'Create a simple, 4-step learning roadmap for someone who wants to learn "{userInput}". Each step should be a short, actionable sentence. Present it as a numbered list (e.g., 1. First step...).',
   },
   ja: {
     title: "DonyStudy - より深く、より速く、より賢く学ぶ",
@@ -593,6 +599,9 @@ const translations = {
     footerSlogan: "より深く、より速く、より賢く学ぶ。",
     footerPrivacy: "プライバシーポリシー",
     footerTerms: "利用規約",
+    // AI Prompts
+    conceptPrompt: '「{userInput}」の概念を学生に適した簡単な一段落で説明してください。',
+    roadmapPrompt: '「{userInput}」を学びたい人のための簡単な4ステップの学習ロードマップを作成してください。各ステップは短く実行可能な文である必要があります。番号付きリスト形式で提示してください（例：1. 最初のステップ...）。',
   },
 };
 
@@ -1065,7 +1074,8 @@ document.addEventListener("DOMContentLoaded", () => {
   conceptBtn.addEventListener("click", () => {
     const userInput = conceptInput.value.trim();
     if (!userInput) return;
-    const prompt = `Explain the concept of "${userInput}" in a simple, single paragraph, suitable for a student.`;
+    const promptTemplate = translations[currentLang].conceptPrompt;
+    const prompt = promptTemplate.replace('{userInput}', userInput);
     callGemini(prompt, conceptBtn, conceptOutput, "demo1Error");
   });
 
@@ -1076,7 +1086,8 @@ document.addEventListener("DOMContentLoaded", () => {
   roadmapBtn.addEventListener("click", () => {
     const userInput = roadmapInput.value.trim();
     if (!userInput) return;
-    const prompt = `Create a simple, 4-step learning roadmap for someone who wants to learn "${userInput}". Each step should be a short, actionable sentence. Present it as a numbered list (e.g., 1. First step...).`;
+    const promptTemplate = translations[currentLang].roadmapPrompt;
+    const prompt = promptTemplate.replace('{userInput}', userInput);
     callGemini(prompt, roadmapBtn, roadmapOutput, "demo2Error");
   });
 
