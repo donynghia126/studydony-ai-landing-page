@@ -3,19 +3,19 @@
 // Dữ liệu mới cho testimonials
 const testimonials = [
   {
-    img: "https://placehold.co/150x150/EBF4FF/4A5568?text=Aoi+N.",
+    img: "img/dat.jpg",
     quoteKey: "testimonialQuote1",
     nameKey: "testimonialName1",
     roleKey: "testimonialRole1",
   },
   {
-    img: "https://placehold.co/150x150/D1FAE5/10B981?text=Bao+L.",
+    img: "img/Bao.jpg",
     quoteKey: "testimonialQuote2",
     nameKey: "testimonialName2",
     roleKey: "testimonialRole2",
   },
   {
-    img: "https://placehold.co/150x150/FEF3C7/F59E0B?text=Kenji+T.",
+    img: "img/nguoinhat.jpg",
     quoteKey: "testimonialQuote3",
     nameKey: "testimonialName3",
     roleKey: "testimonialRole3",
@@ -37,11 +37,11 @@ const translations = {
     navPricing: "Bảng Giá",
     navAudience: "Đối Tượng",
     navFAQ: "FAQ",
-    navCTA: "Dùng Thử Chatbot",
+    navCTA: "Tham Gia Beta",
     heroTitle: "Trợ Lý Học Thuật AI Cá Nhân Của Bạn",
     heroSlogan:
       "Học Sâu Hơn, Nhanh Hơn, Thông Minh Hơn. Khơi dậy tiềm năng, chinh phục tri thức cùng đối tác học tập thế hệ mới.",
-    heroCTA: "Bắt Đầu Học Miễn Phí",
+    heroCTA: "Tham Gia Beta", //Bắt đầu Học Miễn Phí
     featuresTitle: "Tất Cả Công Cụ Bạn Cần Để Thành Công",
     featuresSubtitle:
       "Từ giải đáp bài tập phức tạp đến xây dựng lộ trình học tập, DonyStudy AI luôn sẵn sàng hỗ trợ.",
@@ -148,7 +148,7 @@ const translations = {
     teamMember1Role: "Nhà Sáng Lập & Lập Trình Viên Chính",
     teamMember2Name: "Gemini",
     teamMember2Role: "Phi Công Phụ AI",
-    teamMember3Name: "Bạn",
+    teamMember3Name: "Ngọc Đạt",
     teamMember3Role: "Người Dùng & Đóng Góp Viên Quý Giá",
     pricingTitle: "Chọn Gói Dịch Vụ Của Bạn",
     pricingSubtitle: "Bảng giá đơn giản, minh bạch cho mọi người học.",
@@ -178,7 +178,7 @@ const translations = {
     testimonialSubtitle: "Trải nghiệm thực tế từ người dùng thực tế.",
     testimonialQuote1:
       "DonyStudy AI đã thay đổi hoàn toàn cách tôi học. Thay vì mất hàng giờ để debug một lỗi code nhỏ, giờ tôi có thể nhận được giải pháp chỉ trong vài phút. Nó thực sự là một đối tác học tập thông minh mà tôi luôn ao ước.",
-    testimonialName1: "Nakamura Aoi",
+    testimonialName1: "Võ Ngọc Đạt",
     testimonialRole1: "Sinh viên năm 2, ngành Công nghệ Thông tin",
     testimonialQuote2:
       '"Là một học sinh cuối cấp, việc ôn tập cho các kỳ thi lớn rất áp lực. DonyStudy AI giúp mình hệ thống hóa kiến thức Vật lý và giải các bài tập khó một cách trực quan, tiết kiệm rất nhiều thời gian."',
@@ -202,7 +202,7 @@ const translations = {
     finalCtaTitle: "Sẵn Sàng Nâng Tầm Việc Học?",
     finalCtaSubtitle:
       "Tham gia cùng hàng ngàn người học khác và trải nghiệm tương lai của giáo dục ngay hôm nay.",
-    finalCtaButton: "Dùng Thử Miễn Phí",
+    finalCtaButton: "Tham Gia Beta", // Dùng thử miễn phí
     footerLinks: "Liên kết",
     footerSubscribe: "Đăng ký nhận tin",
     footerSubscribeDesc: "Nhận tin tức và cập nhật mới nhất từ chúng tôi.",
@@ -228,11 +228,11 @@ const translations = {
     navPricing: "Pricing",
     navAudience: "Audience",
     navFAQ: "FAQ",
-    navCTA: "Try Chatbot",
+    navCTA: "Try Beta Chatbot",
     heroTitle: "Your Personal AI Academic Assistant",
     heroSlogan:
       "Learn Deeper, Faster, Smarter. Unleash your potential and conquer knowledge with a next-generation learning partner.",
-    heroCTA: "Start Learning for Free",
+    heroCTA: "Try Beta Chatbot", //Start Learning for Free
     featuresTitle: "All The Tools You Need To Succeed",
     featuresSubtitle:
       "From solving complex assignments to building a study roadmap, DonyStudy AI is here to help.",
@@ -342,7 +342,7 @@ const translations = {
     teamMember1Role: "Founder & Lead Developer",
     teamMember2Name: "Gemini",
     teamMember2Role: "AI Co-Pilot",
-    teamMember3Name: "You",
+    teamMember3Name: "Ngoc Dat",
     teamMember3Role: "Valued User & Contributor",
     pricingTitle: "Choose Your Plan",
     pricingSubtitle: "Simple, transparent pricing for every type of learner.",
@@ -372,7 +372,7 @@ const translations = {
     testimonialSubtitle: "Real experiences from real users.",
     testimonialQuote1:
       "DonyStudy AI completely changed how I learn. Instead of spending hours debugging a small code error, I now get a solution in minutes. It's truly the smart learning partner I've always wished for.",
-    testimonialName1: "Nakamura Aoi",
+    testimonialName1: "Vo Ngoc Dat",
     testimonialRole1: "2nd Year Student, Information Technology",
     testimonialQuote2:
       '"As a senior high school student, reviewing for major exams is stressful. DonyStudy AI helps me systematize my Physics knowledge and solve difficult problems visually, saving a ton of time."',
@@ -396,7 +396,7 @@ const translations = {
     finalCtaTitle: "Ready to Elevate Your Learning?",
     finalCtaSubtitle:
       "Join thousands of other learners and experience the future of education today.",
-    finalCtaButton: "Try for Free",
+    finalCtaButton: "Try Beta", //Try for Free
     footerLinks: "Links",
     footerSubscribe: "Subscribe to our newsletter",
     footerSubscribeDesc: "Get the latest news and updates from our team.",
@@ -422,11 +422,11 @@ const translations = {
     navPricing: "料金",
     navAudience: "対象者",
     navFAQ: "よくある質問",
-    navCTA: "チャットボットを試す",
+    navCTA: "ベータ版チャットボットを試す",
     heroTitle: "あなたのパーソナルAI学習アシスタント",
     heroSlogan:
       "より深く、より速く、より賢く学ぶ。次世代の学習パートナーと共に、あなたの可能性を解き放ち、知識を征服しましょう。",
-    heroCTA: "無料で学習を始める",
+    heroCTA: "ベータ版チャットボットを試す", //無料で学習を始める
     featuresTitle: "成功に必要なすべてのツール",
     featuresSubtitle:
       "複雑な課題の解決から学習ロードマップの作成まで、DonyStudy AIがサポートします。",
@@ -528,7 +528,7 @@ const translations = {
     teamMember1Role: "創設者兼リード開発者",
     teamMember2Name: "ジェミニ",
     teamMember2Role: "AI共同操縦士",
-    teamMember3Name: "あなた",
+    teamMember3Name: "Ngoc Dat",
     teamMember3Role: "貴重なユーザー兼貢献者",
     pricingTitle: "プランを選択",
     pricingSubtitle: "すべての学習者のためのシンプルで透明な価格設定。",
@@ -558,7 +558,7 @@ const translations = {
     testimonialSubtitle: "実際のユーザーからの実体験。",
     testimonialQuote1:
       "「DonyStudy AIは私の学習方法を完全に変えました。小さなコードエラーのデバッグに何時間も費やす代わりに、数分で解決策を得られるようになりました。私がずっと望んでいたスマートな学習パートナーです。」",
-    testimonialName1: "中村あおい",
+    testimonialName1: "Vo Ngoc Dat",
     testimonialRole1: "情報技術学部 2年生",
     testimonialQuote2:
       "高校三年生として、主要な試験の準備はストレスがたまります。DonyStudy AIは物理の知識を体系化し、難しい問題を視覚的に解決するのに役立ち、多くの時間を節約してくれます。」",
@@ -582,7 +582,7 @@ const translations = {
     finalCtaTitle: "学習をレベルアップする準備はできましたか？",
     finalCtaSubtitle:
       "何千人もの学習者と一緒に、教育の未来を今日体験しましょう。",
-    finalCtaButton: "無料で試す",
+    finalCtaButton: "ベータ版を試す", //無料で試す
     footerLinks: "リンク",
     footerSubscribe: "ニュースレターを購読",
     footerSubscribeDesc:
